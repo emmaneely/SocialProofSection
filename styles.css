@@ -6,8 +6,8 @@ html {
 body {
     background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: top, bottom;
+    background-size: 25%;
     font-family: 'League Spartan', sans-serif;
 }
 
@@ -17,16 +17,19 @@ main {
     grid-template-areas:
     'header ratings'
     'flex-cards flex-cards';
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 header {
     grid-area: header;
+    padding-right: 7em;
 }
 
 h1 {
     color: hsl(300, 43%, 22%);
+    font-size: 3em;
+    margin: 0;
 }
 
 header p {
@@ -35,6 +38,29 @@ header p {
 
 .ratings {
     grid-area: ratings;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#rating-1, #rating-2, #rating-3 {
+    background-color: hsl(300, 24%, 96%);
+    color: hsl(300, 43%, 22%);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 1em;
+}
+
+#rating-1 {
+    align-self: flex-start;
+}
+
+#rating-2 {
+    align-self: center;
+}
+
+#rating-3 {
+    align-self: flex-end;
 }
 
 .flex-cards {
@@ -51,8 +77,42 @@ header p {
     padding: 2.5em 1.5em;
 }
 
+.card:hover {
+    box-shadow: 0.5em 0.5em 0.5em #666;
+}
+
+.card-header {
+    display: flex;
+    gap: 1.5em;
+}
+
+#card-1 {
+    align-self: flex-start;
+}
+
+#card-2 {
+    align-self: center;
+}
+
+#card-3 {
+    align-self: flex-end;
+}
+
 img {
     border-radius: 50%;
+}
+
+.card-header img {
+    width: 100px;
+    height: auto;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.verified {
+    color: hsl(333, 80%, 67%);
 }
 
 .attribution {
