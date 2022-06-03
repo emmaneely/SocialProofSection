@@ -1,3 +1,60 @@
+html {
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'League Spartan', sans-serif;
+}
+
+main {
+    margin: 10%; 
+    display: grid;
+    grid-template-areas:
+    'header ratings'
+    'flex-cards flex-cards';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 2fr;
+}
+
+header {
+    grid-area: header;
+}
+
+h1 {
+    color: hsl(300, 43%, 22%);
+}
+
+header p {
+    color: hsl(303, 10%, 53%);
+}
+
+.ratings {
+    grid-area: ratings;
+}
+
+.flex-cards {
+    grid-area: flex-cards;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.card {
+    background-color: hsl(300, 43%, 22%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    padding: 2.5em 1.5em;
+}
+
+img {
+    border-radius: 50%;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
