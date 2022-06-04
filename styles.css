@@ -1,28 +1,30 @@
-html {
-    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
-    box-sizing: border-box;
-}
-
 body {
     background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-color: hsl(0, 0%, 100%);
     background-repeat: no-repeat;
     background-position: top, bottom;
     background-size: 25%;
     font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
 }
 
 main {
-    margin: 10%; 
+    margin: 10% auto; 
+    width: 1100px;
     display: grid;
     grid-template-areas:
     'header ratings'
     'flex-cards flex-cards';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 275px 275px;
 }
 
 header {
     grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-right: 7em;
 }
 
@@ -36,11 +38,16 @@ header p {
     color: hsl(303, 10%, 53%);
 }
 
+p {
+    line-height: 1.5em;
+}
+
 .ratings {
     grid-area: ratings;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    justify-content: center;
+    gap: 1em;
 }
 
 #rating-1, #rating-2, #rating-3 {
@@ -48,7 +55,7 @@ header p {
     color: hsl(300, 43%, 22%);
     border-radius: 5px;
     font-weight: 700;
-    padding: 1em;
+    padding: 1em 3em;
 }
 
 #rating-1 {
@@ -63,10 +70,15 @@ header p {
     align-self: flex-end;
 }
 
+.rating-text {
+    padding-left: 1em;
+}
+
 .flex-cards {
     grid-area: flex-cards;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 1.5em;
 }
 
@@ -74,7 +86,8 @@ header p {
     background-color: hsl(300, 43%, 22%);
     color: hsl(0, 0%, 100%);
     border-radius: 8px;
-    padding: 2.5em 1.5em;
+    padding: 1.5em 1.5em;
+    width: 300px;
 }
 
 .card:hover {
@@ -83,6 +96,7 @@ header p {
 
 .card-header {
     display: flex;
+    align-items: center;
     gap: 1.5em;
 }
 
@@ -98,13 +112,14 @@ header p {
     align-self: flex-end;
 }
 
-img {
+.card-header img {
+    width: 40px;
+    height: auto;
     border-radius: 50%;
 }
 
-.card-header img {
-    width: 100px;
-    height: auto;
+.name, .verified {
+    line-height: 0.5em;
 }
 
 .name {
@@ -113,6 +128,7 @@ img {
 
 .verified {
     color: hsl(333, 80%, 67%);
+    font-weight: 300;
 }
 
 .attribution {
@@ -123,3 +139,9 @@ img {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+@media only screen and (max-width: 1365px) {
+    .#card-1 {
+      
+    }
+  }
